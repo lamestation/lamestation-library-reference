@@ -1,35 +1,21 @@
-== LameLCD
-
-LameLCD is a 128x64 pixel, three-color display driver for the LameStation.
-
-[source, language='obj']
-----
-lcd : "LameLCD"
-----
-
-Demos for this object can be found in the `/demos/graphics/` folder of the SDK.
-
-=== Commands
-
-- `lcd.Start` - Initialize the LameLCD library.
-- `lcd.Draw` - Show the contents of the drawing buffer on the screen.
-- `lcd.InvertScreen` - Invert black and white pixels on the entire screen.
-- `lcd.SetFrameLimit` - Set an upper limit to the number of times the screen will be redrawn a second.
-- `lcd.WaitForVerticalSync` - Wait until the start of the next LCD frame before continuing.
-
-=== Constants
-
-- `SCREEN_W`, `SCREEN_H` - LameStation screen width and height in pixels (128, 64).
-- `QUARTERSPEED`, `HALFSPEED`, `FULLSPEED` - Frame rate speed.
-
-=== About
+---
+layout: librarypage 
+library: "Library Reference"
+title: "LameLCD"
+alias: lcd
+brief: "A 128x64 pixel, three-color display driver for the LameStation."
+folder: /demos/graphics/
+constant:
+    SCREEN_W: Width of the screen in pixels.
+    SCREEN_H: Height of the screen in pixels.
+    QUARTERSPEED: 1/4 of the full frame rate.Frame 
+---
 
 Call `lcd.Start` once at the beginning of your program to use LameLCD, giving the drawing surface returned when LameGFX is started as the argument. Due to this, its recommended to start LameLCD and LameGFX at the same time, like so:
 
-[source, language='pub']
-----
+```
 lcd.Start(gfx.Start)
-----
+```
 
 The screen will not update on its own. Call `lcd.Draw` to send the graphics buffer to the screen.
 
@@ -39,8 +25,6 @@ All colors on the screen can be inverted with the `lcd.InvertScreen` command, wh
 
 To prevent flickering, call `lcd.WaitForVerticalSync` before calling `lcd.Draw` to ensure LameLCD is not busy when `lcd.Draw` is called. Enable `lcd.SetFrameLimit` to have LameLCD do this automatically, at one of three speeds. Frame rate limiting is disabled by default.
 
-==== Advanced Usage
-
-===== Direct Access
+### Direct Access
 
 LameLCD is usually started with LameGFX. However, it can also be started with a custom buffer if the size and alignment match (2048 bytes, long-aligned).
