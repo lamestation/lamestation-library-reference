@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "audio.PlaySound"
 library: "LameAudio"
 type: function

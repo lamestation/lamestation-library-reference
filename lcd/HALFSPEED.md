@@ -1,5 +1,5 @@
 ---
-layout: ref_constant
+layout: ref/constant
 title: "lcd#HALFSPEED"
 library: "LameLCD"
 type: constant

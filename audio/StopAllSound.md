@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "audio.StopAllSound"
 library: "LameAudio"
 type: function

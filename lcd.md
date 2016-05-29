@@ -1,5 +1,5 @@
 ---
-layout: ref_library 
+layout: ref/library 
 library: "Library Reference"
 title: "LameLCD"
 alias: lcd

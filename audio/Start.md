@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "audio.Start"
 library: "LameAudio"
 type: function

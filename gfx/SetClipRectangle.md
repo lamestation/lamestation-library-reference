@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "gfx.SetClipRectangle"
 library: "LameGFX"
 type: function

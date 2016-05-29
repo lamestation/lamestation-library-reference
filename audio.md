@@ -1,5 +1,5 @@
 ---
-layout: ref_library 
+layout: ref/library 
 title: "LameAudio"
 alias: audio 
 brief: "A 4-channel synthesizer for the LameStation."

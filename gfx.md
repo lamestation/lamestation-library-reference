@@ -1,5 +1,5 @@
 ---
-layout: ref_library 
+layout: ref/library 
 title: "LameGFX"
 alias: gfx
 brief: "The LameStation graphics engine, providing a drawing surface and basic drawing functions."

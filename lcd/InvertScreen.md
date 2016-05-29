@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "lcd.InvertScreen"
 library: "LameLCD"
 type: function

@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "gfx.Fill"
 library: "LameGFX"
 type: function

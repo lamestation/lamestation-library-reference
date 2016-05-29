@@ -1,5 +1,5 @@
 ---
-layout: ref_function
+layout: ref/function
 title: "audio.StartEnvelope"
 library: "LameAudio"
 type: function

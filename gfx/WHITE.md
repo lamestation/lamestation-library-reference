@@ -1,5 +1,5 @@
 ---
-layout: ref_constant
+layout: ref/constant
 title: "gfx#WHITE"
 library: "LameGFX"
 type: constant
