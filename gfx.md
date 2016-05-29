@@ -1,13 +1,9 @@
 ---
-layout: librarypage 
+layout: ref_library 
 title: "LameGFX"
 alias: gfx
 brief: "The LameStation graphics engine, providing a drawing surface and basic drawing functions."
 folder: /demos/graphics/
-constant:
-    SCREEN_W: Width of the screen in pixels.
-    SCREEN_H: Height of the screen in pixels.
-    QUARTERSPEED: Frame 
 image: blit.png
 ---
 

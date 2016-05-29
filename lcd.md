@@ -1,14 +1,10 @@
 ---
-layout: librarypage 
+layout: ref_library 
 library: "Library Reference"
 title: "LameLCD"
 alias: lcd
 brief: "A 128x64 pixel, three-color display driver for the LameStation."
 folder: /demos/graphics/
-constant:
-    SCREEN_W: Width of the screen in pixels.
-    SCREEN_H: Height of the screen in pixels.
-    QUARTERSPEED: 1/4 of the full frame rate.Frame 
 ---
 
 Call `lcd.Start` once at the beginning of your program to use LameLCD, giving the drawing surface returned when LameGFX is started as the argument. Due to this, its recommended to start LameLCD and LameGFX at the same time, like so:

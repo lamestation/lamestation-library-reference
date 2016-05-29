@@ -1,19 +1,12 @@
-== LameAudio
+---
+layout: ref_library 
+title: "LameAudio"
+alias: audio 
+brief: "A 4-channel synthesizer for the LameStation."
+folder: /demos/audio/
+---
 
-LameAudio is a 4-channel synthesizer for the LameStation.
-
-[source, language='obj']
-----
-audio : "LameAudio"
-----
-
-Demos for this object can be found in the `/demos/audio/` folder of the SDK.
-
-=== Commands
-
-- `audio.Start` - Initialize the LameAudio synthesizer.
 - `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.
-- `audio.StopAllSound` - Stop sound on all channels.
 
 *Sound Shaping Commands*
 
@@ -23,25 +16,16 @@ Demos for this object can be found in the `/demos/audio/` folder of the SDK.
 - `audio.SetSample` - Load a new sample.
 - `audio.LoadPatch` - Load a complete patch configuration to any channel(s).
 
-*Keyboard Mode Commands*
-
-- `audio.PlaySound` - Play a sound on the specified channel.
-- `audio.StopSound` - Stop sound on the specified channel.
-
 *Manual Mode Commands*
 
 - `audio.SetVolume` - Set the volume of the target note.
 - `audio.SetNote` - Set the note of the given audio channel.
 - `audio.SetFrequency` - Set the frequency increment of the specified audio channel.
-- `audio.StartEnvelope` - Trigger the channel envelope to start.
-- `audio.StopEnvelope` - Trigger the channel envelope to stop.
 
 === Constants
 
 - *Waveform* - `_SQUARE`, `_SAW`, `_TRIANGLE`, `_SINE`, `_NOISE`, `_SAMPLE`
 - *Channel parameter* - `_ATK`, `_DEC`, `_SUS`, `_REL`, `_WAV`, `_CONTROL`
-
-=== About
 
 Before LameAudio can be used, `audio.Start` must be called once and only once at the start of a program. LameAudio is designed so that only one synthesizer is ever running, and any object may call it.
 
@@ -49,45 +33,43 @@ Each channel has its own parameters that affect the sound it makes. `audio.SetPa
 
 This is what a patch looks like.
 
-[source]
-----
+```
 DAT
     patch
     byte  $F, 127, 10, 100, 10, audio#_SAW
-----
+```
 
 Each channel has a waveform and an envelope.
 
-image:audio_flow.png[]
+![](audio_flow.png)
 
-==== Waveform
+### Waveform
 
 The waveform generator is what actually creates the sound. Call `audio.SetFrequency` to play any frequency, or call `audio.SetNote` to play specific notes like on a piano.
 
 Call `audio.SetWaveform` to load one of the following waveforms.
 
-.Waveforms
-|===
-| *Value* | *Name*   | *Waveform*
-| 0       | Square   | image:0_square.png[]
-| 1       | Sawtooth | image:1_saw.png[]
-| 2       | Triangle | image:2_triangle.png[]
-| 3       | Sine     | image:3_sine.png[]
-| 4       | Noise    | image:4_noise.png[]
-| 5       | Sample   | image:5_sample.png[]
-|===
+| Value   | Name     | Waveform            |
+|---------|----------|---------------------|
+| 0       | Square   | ![](0_square.png)   |
+| 1       | Sawtooth | ![](1_saw.png)      |
+| 2       | Triangle | ![](2_triangle.png) |
+| 3       | Sine     | ![](3_sine.png)     |
+| 4       | Noise    | ![](4_noise.png)    |
+| 5       | Sample   | ![](5_sample.png)   |
+{: class="table"}
 
 The _Sample_ waveform is a 512B block of audio data, enough for one cycle. Call `audio.SetSample` with the address of a sample to load it. Only one sample can be used at a time.
 
 A collection of ready-made samples can be found in the `/media/samples/` folder of the SDK.
 
-==== Envelope
+### Envelope
 
 The envelope controls the volume of the sound over time, allowing you to create sounds that hit sharply like bells, or have a long hold time like a wind instrument. You can control how it sounds with the ADSR parameters of the envelope.
 
 _ADSR_ stands for _Attack, Decay, Sustain, and Release_. You can configure ADSR settings with `audio.SetADSR`.
 
-image:adsr.png[]
+![](adsr.png)
 
 - *Attack* (`0-127`) - The time from silence to full volume.
 - *Decay* (`0-127`) - The time from the max value to...
@@ -102,31 +84,30 @@ The envelope can be toggled with `audio.SetEnvelope`.
 
 To silence all audio, use the `audio.StopAllSound` command.
 
-=== Sample Format
+### Sample Format
 
 LameStation songs consist of two main sections: pattern and sequence data.
 
-==== Sample Data
+#### Sample Data
 
 A LameAudio sample is a 512-byte sequence of arbitrary data. It can be anything you want as long as its 512 bytes.
 
-[source]
-.Example pattern section
-----
+*Example pattern section*
+
+```
 DAT
 wav_data
 
 byte    <512 bytes...>
-----
+```
 
 Since it's possible to use any address in memory, the running system can also create samples on the fly.
 
-==== Sample Interface
+#### Sample Interface
 
 The address of sample data can be passed directly to `audio.SetSample`, unless stored in another object. If so, use this interface:
 
-[source]
-----
+```
 PUB Addr
     return @wav_data
-----
+```

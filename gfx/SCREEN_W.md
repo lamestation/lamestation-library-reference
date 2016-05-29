@@ -1,5 +1,5 @@
 ---
-layout: constantpage
+layout: ref_constant
 title: "gfx#SCREEN_W"
 library: "LameGFX"
 type: constant

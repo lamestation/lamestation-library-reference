@@ -1,5 +1,5 @@
 ---
-layout: constantpage
+layout: ref_constant
 title: "lcd#SCREEN_H"
 library: "LameLCD"
 type: constant

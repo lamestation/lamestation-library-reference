@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "gfx.WaitToDraw"
 library: "LameGFX"
 type: function

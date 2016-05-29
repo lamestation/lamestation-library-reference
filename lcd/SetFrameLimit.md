@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "lcd.SetFrameLimit"
 library: "LameLCD"
 type: function

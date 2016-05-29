@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "lcd.WaitForVerticalSync"
 library: "LameLCD"
 type: function

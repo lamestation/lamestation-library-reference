@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "gfx.Map"
 library: "LameGFX"
 type: function

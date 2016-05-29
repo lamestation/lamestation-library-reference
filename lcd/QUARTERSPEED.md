@@ -1,5 +1,5 @@
 ---
-layout: constantpage
+layout: ref_constant
 title: "lcd#QUARTERSPEED"
 library: "LameLCD"
 type: constant

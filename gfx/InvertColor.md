@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "gfx.InvertColor"
 library: "LameGFX"
 type: function

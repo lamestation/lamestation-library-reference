@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "gfx.Clear"
 library: "LameGFX"
 type: function

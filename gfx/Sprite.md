@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "gfx.Sprite"
 library: "LameGFX"
 type: function

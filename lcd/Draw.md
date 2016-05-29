@@ -1,5 +1,5 @@
 ---
-layout: functionpage
+layout: ref_function
 title: "lcd.Draw"
 library: "LameLCD"
 type: function
