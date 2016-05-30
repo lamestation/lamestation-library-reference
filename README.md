@@ -5,5 +5,5 @@ fulltitle: SDK Library Reference
 permalink: /reference/sdk/
 ---
 
-{% assign librarylist = site.reference %}
+{% for _collection in site.collections %}{% if _collection.label == page.collection %}{% assign librarylist = _collection.docs %}{% endif %}{% endfor %}
 {% include librarylistall.html %}
