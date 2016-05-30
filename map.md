@@ -1,24 +1,14 @@
-== LameMap
-
-image:ParallaxScrolling.png[]
-
-LameMap is a tile engine for LameGFX. It provides functions to display and interact with tile-based game maps.
-
-[source, language='obj']
-----
-map : "LameMap"
-----
-
-Demos for this object can be found in the `/demos/maps/` folder of the SDK.
+---
+layout: ref/library 
+title: "LameMap"
+alias: map
+brief: "A tile engine for LameGFX. It provides functions to display and interact with tile-based game maps."
+folder: /demos/maps/
+image: ParallaxScrolling.png
+---
 
 === Commands
 
-- `map.Load` - Load a map into LameMap.
-- `map.Draw` - Draw the current map to the screen.
-- `map.DrawRectangle` - Draw the current map to a portion of the screen.
-- `map.Width` - Return the width of the currently loaded map in tiles.
-- `map.Height` - Return the height of the currently loaded map in tiles.
-- `map.TestPoint` - Test whether tile on a map is collidable.
 - `map.TestCollision` - Test if the region has collided with a map tile.
 - `map.TestMoveX` - Apply horizontal movement to an object's position and test if it will collide.
 - `map.TestMoveY` - Apply vertical movement to an object's position and test if it will collide.
@@ -29,23 +19,21 @@ Demos for this object can be found in the `/demos/maps/` folder of the SDK.
 
 === About
 
-LameGFX must be started before LameMap can be used. Call `map.Load` to load a map. Only one map can be loaded at a time.
-
 There are two ways to draw a map to the screen: `map.Draw` draws the map to the whole screen, while `map.DrawRectangle` limits the map to a region with the corners (x1, y1) and (x2, y2). Both use an `offset_x` and `offset_y` that determine which portion of the map to show.
 
 image::drawmap.png[title='The red rectangle is the offset, while the blue rectangle is the size of the visible map portion.']
 
 You can get the number of horizontal and vertical tiles in your map with `map.Width` and `map.Height`.
 
-[source, language='pub']
-----
+```
 mapsize := map.Width * map.Height
-----
+```
 
 LameMap has collision support built in. `map.TestPoint` returns if a tile has collision enabled. You can test whether or not collision has occurred with `map.TestCollision`, passing the rectangle of the object.
 
-[NOTE]
+{% include info %}
 Only valid map regions are tested for collisions; positions that are off the map area will always return 0.
+{% include infoend %}
 
 Knowing whether a collision has happened is often not enough, as you might need to keep the playing inside a known region. `map.TestMoveX` and `map.TestMoveY` allow you to test if a potential horizontal or vertical movement will cause a collision. If so, it will return a correction factor needed to remove the object from the collision. In this way, you can build walls that players can slide along and won't escape from.
 
