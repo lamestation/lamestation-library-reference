@@ -16,3 +16,6 @@ param:
 
 The bottom and right coordinates are **exclusive**, which means
 they specify a rectangle up to, but not including their points.
+
+![](drawmap.png)
+The red rectangle is the offset, while the blue rectangle is the size of the visible map portion.

@@ -14,5 +14,9 @@ return: True if collision occurred, otherwise false.
 ---
 
 LameMap has collision support built in. You can test whether 
-or not collision has occurred with `map.TestCollision`, passing the rectangle to test.
+or not collision has occurred with `map.TestCollision`, passing 
+the rectangle to test.
 
+{% include info %}
+Only valid map regions are tested for collisions; positions that are off the map area will always return 0.
+{% include infoend %}

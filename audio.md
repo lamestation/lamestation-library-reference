@@ -4,6 +4,7 @@ title: "LameAudio"
 alias: audio 
 brief: "A 4-channel synthesizer for the LameStation."
 folder: /demos/audio/
+icon: volume-up
 ---
 
 - `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.

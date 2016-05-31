@@ -5,6 +5,7 @@ alias: gfx
 brief: "The LameStation graphics engine, providing a drawing surface and basic drawing functions."
 folder: /demos/graphics/
 image: blit.png
+icon: paint-brush
 ---
 
 Call `gfx.Start` to start LameGFX. It should only be started once at the beginning of your program, before all drawing operations, and should be connected to LameLCD right away.

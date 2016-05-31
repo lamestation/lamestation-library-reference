@@ -10,3 +10,5 @@ param:
     offset_y: The vertical offset from the map origin.
 ---
 
+![](drawmap.png)
+The red rectangle is the offset, while the blue rectangle is the size of the visible map portion.
