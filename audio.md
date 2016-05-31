@@ -7,27 +7,6 @@ folder: /demos/audio/
 icon: volume-up
 ---
 
-- `audio.SetEnvelope` - Toggle the ADSR envelope generator on the given audio channel.
-
-*Sound Shaping Commands*
-
-- `audio.SetParam` - Manually set a parameter of the audio channel.
-- `audio.SetADSR` - Set all parameters of the ADSR envelope shape.
-- `audio.SetWaveform` - Set the waveform of the given audio channel.
-- `audio.SetSample` - Load a new sample.
-- `audio.LoadPatch` - Load a complete patch configuration to any channel(s).
-
-*Manual Mode Commands*
-
-- `audio.SetVolume` - Set the volume of the target note.
-- `audio.SetNote` - Set the note of the given audio channel.
-- `audio.SetFrequency` - Set the frequency increment of the specified audio channel.
-
-=== Constants
-
-- *Waveform* - `_SQUARE`, `_SAW`, `_TRIANGLE`, `_SINE`, `_NOISE`, `_SAMPLE`
-- *Channel parameter* - `_ATK`, `_DEC`, `_SUS`, `_REL`, `_WAV`, `_CONTROL`
-
 Before LameAudio can be used, `audio.Start` must be called once and only once at the start of a program. LameAudio is designed so that only one synthesizer is ever running, and any object may call it.
 
 Each channel has its own parameters that affect the sound it makes. `audio.SetParam` can control any parameter in the _Channel parameter_ constant list. You can change all parameters at once with the `audio.LoadPatch` command, which is good if you change instruments often.
