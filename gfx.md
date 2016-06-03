@@ -61,6 +61,8 @@ Each sprite has the same structure.
 - *width*, *height* (`0-65535`) - The width and height of each frame in pixels.
 - *data...* - Image data.
 
+*Note: The width is rounded to the next nearest 8, so for an image 6x6 pixels, `frameboost = 8 x 6 / 4`.*
+
 ```
 DAT
 gfx_data
